@@ -128,7 +128,32 @@ Manufacturing also offers the useful concept of **interface control**. In a comp
 
 An engineering organization should therefore define and verify what each component must accomplish, how it interacts with the rest of the system, and which plausible future changes it is expected to accommodate. The last category should reflect anticipated requirements rather than speculative extensibility.
 
-The software factory ultimately needs two complementary judgments: **conformance**, which asks whether the part was built correctly, and **architectural fitness**, which asks whether the part belongs in the assembly and allows that assembly to keep evolving. Conformance can become highly automated. Architectural fitness can be partially automated, but it continues to benefit from human design ownership. The human engineer becomes less of an exhaustive code inspector and more of a systems design engineer.
+The software factory ultimately needs two complementary judgments: **conformance**, which asks whether the part was built correctly, and **architectural fitness**, which asks whether the part belongs in the assembly and allows that assembly to keep evolving. Conformance can become highly automated. Architectural fitness can be partially automated, but it continues to benefit from human design ownership.
+
+## From code inspector to evidence adjudicator
+
+Human design ownership does not mean a person must begin every review by searching an entire diff for unknown problems. The open-ended inspection questions can increasingly be delegated to specialized review agents, each responsible for a distinct dimension of risk.
+
+A functional agent can compare the implementation with the feature contract. A test-quality agent can determine whether the tests genuinely demonstrate the requirements. Architecture and impact agents can examine boundaries, dependencies, interfaces, data ownership, and downstream consumers. Other agents can focus on maintainability, security, privacy, performance, cost, and operability.
+
+The set of reviews should be selected by risk. A documentation correction should not receive the same treatment as an authorization change, database migration, or public API modification. The output should not be a collection of lengthy AI summaries. It should be a consolidated evidence package in which each material finding identifies:
+
+- Its severity and confidence
+- The requirement or engineering standard involved
+- The relevant code or behavior
+- The supporting evidence
+- A recommended action
+- Whether the finding should block the merge
+
+The human reviewer then becomes an **adjudicator of evidence**. They choose among three outcomes: approve because verification passed and the residual risk is acceptable; request work because a specific defect or evidence gap remains; or require deeper review because the change contains uncertainty that needs direct inspection by an appropriate specialist.
+
+Humans still read code when a finding is consequential, uncertain, disputed, or beyond the reliable competence of the review agents. But they no longer need to begin every review by manually recreating the work of functional, architectural, security, performance, and operational inspection.
+
+This model depends on the review agents themselves being trustworthy. They must evaluate against standards independent of the implementation agent, cite concrete evidence, express uncertainty, and be calibrated against known defects. Their false positives and escaped issues must be measured. Otherwise, human review overload is merely replaced by AI-generated review noise.
+
+> **Specialized agents perform inspection. Verification systems establish measurable conformance. Humans adjudicate the resulting evidence according to risk.**
+
+This makes the human engineer less of an exhaustive code inspector and more of a systems design engineer accountable for the final decision.
 
 ## Software needs industrial-grade metrology
 
