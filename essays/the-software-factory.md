@@ -94,6 +94,42 @@ That does not make unit tests obsolete. Unit and integration tests still provide
 
 Nor does passing a test suite prove complete correctness. Tests only evaluate the conditions they encode. If an agent authors both the implementation and an inadequate definition of success, a green build can provide false confidence. Acceptance criteria must be independently governed, and the verification system must itself be tested.
 
+## Beyond conformance: does the part belong in the assembly?
+
+Functional correctness is only one dimension of engineering quality. A part can be manufactured perfectly according to its drawing and still fit poorly within the larger assembly. Software has the same problem.
+
+| Manufacturing | Software engineering |
+| --- | --- |
+| Design conformance | Does the implementation satisfy its functional specification? |
+| Assembly compatibility | Does it integrate cleanly with existing modules, interfaces, and architectural conventions? |
+| Future extensibility | Can the system accommodate plausible changes without excessive rework? |
+
+These dimensions require different forms of verification.
+
+**1. Part inspection — functional verification**
+
+Acceptance tests, end-to-end tests, performance benchmarks, and explicit feature requirements establish whether the implementation behaves as specified.
+
+**2. Assembly inspection — integration verification**
+
+Contract tests, dependency boundaries, architectural rules, integration tests, and compatibility checks establish whether the change belongs in the existing system.
+
+**3. Design-for-evolution review — architectural fitness**
+
+Cohesion, coupling, modularity, and expected future requirements determine whether the design can evolve without disproportionate rework.
+
+The third dimension is the hardest. Future extensibility cannot be measured like a dimensional tolerance. Whether an agent should introduce a new module, for example, depends on whether the behavior fits an existing responsibility, whether the module creates new coupling, and whether plausible future changes justify an additional abstraction. An abstraction that might someday be useful can just as easily create unnecessary complexity today.
+
+Software systems can nevertheless define **architectural tolerances**. Just as mechanical assemblies permit bounded dimensional variation, software systems can permit bounded structural variation. Agents can choose implementations freely within established dependency rules, interface contracts, ownership boundaries, and approved patterns. Changes outside those boundaries trigger architectural review. Some tolerances can be enforced automatically; others still require contextual design judgment.
+
+Manufacturing also offers the useful concept of **interface control**. In a complex assembly, a component's internals may change considerably as long as it continues to satisfy its obligations at the boundary. The corresponding principle for a software factory is simple:
+
+> **Strict contracts at system boundaries, implementation freedom within those boundaries.**
+
+An engineering organization should therefore define and verify what each component must accomplish, how it interacts with the rest of the system, and which plausible future changes it is expected to accommodate. The last category should reflect anticipated requirements rather than speculative extensibility.
+
+The software factory ultimately needs two complementary judgments: **conformance**, which asks whether the part was built correctly, and **architectural fitness**, which asks whether the part belongs in the assembly and allows that assembly to keep evolving. Conformance can become highly automated. Architectural fitness can be partially automated, but it continues to benefit from human design ownership. The human engineer becomes less of an exhaustive code inspector and more of a systems design engineer.
+
 ## Software needs industrial-grade metrology
 
 Manufacturing depends on metrology: the science of trustworthy measurement. Coordinate measuring machines, gauges, scanners, calibration procedures, and inspection processes are sophisticated engineered systems. Manufacturers invest in their precision because production can only be trusted when conformity can be measured reliably.
