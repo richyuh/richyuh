@@ -2,18 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="richyuh">
-  <center>
-    <h1>richyuh</h1>
-    X: <a href="https://x.com/richyuh0" target="_blank">@richyuh0</a><br /><br />
-    LinkedIn: <a href="https://www.linkedin.com/in/richard-yuh-87052a112/" target="_blank">Richard Yuh</a><br /><br />
-    Instagram: <a href="https://www.instagram.com/rich_yuh/" target="_blank">@rich_yuh</a><br /><br />
-    Github: <a href="https://github.com/richyuh" target="_blank">richyuh</a><br /><br />
-    Email: <a href="mailto:richardyuh1@gmail.com" target="_blank">richardyuh1@gmail.com</a><br /><br />
+<Layout title="Richard Yuh" description="Writing, projects, and links from Richard Yuh.">
+  <main class="site-shell">
+    <header>
+      <p class="eyebrow">RICHARD YUH</p>
+      <h1 class="page-title">Writing and building software.</h1>
+      <p class="lede">Notes on engineering, agentic software development, and the systems around them.</p>
+    </header>
 
-    <h2>Writing</h2>
-    <a href="/writing/the-software-factory">
-      The Software Factory: Why Knowledge Must Move Beyond Code Review
-    </a>
-  </center>
+    <section aria-labelledby="writing-heading">
+      <h2 class="section-title" id="writing-heading">Writing</h2>
+      <div class="writing-entry">
+        <a href="/writing/the-software-factory">
+          The Software Factory: Why Knowledge Must Move Beyond Code Review
+        </a>
+        <p class="body-copy">
+          How agentic development shifts engineering attention toward specifications, verification, and system understanding.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="connect-heading">
+      <h2 class="section-title" id="connect-heading">Connect</h2>
+      <ul class="link-list">
+        <li>X — <a href="https://x.com/richyuh0">@richyuh0</a></li>
+        <li>LinkedIn — <a href="https://www.linkedin.com/in/richard-yuh-87052a112/">Richard Yuh</a></li>
+        <li>Instagram — <a href="https://www.instagram.com/rich_yuh/">@rich_yuh</a></li>
+        <li>GitHub — <a href="https://github.com/richyuh">richyuh</a></li>
+        <li>Email — <a href="mailto:richardyuh1@gmail.com">richardyuh1@gmail.com</a></li>
+      </ul>
+    </section>
+  </main>
 </Layout>

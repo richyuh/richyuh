@@ -7,124 +7,19 @@ const description = 'How agentic software development shifts engineering attenti
 ---
 
 <Layout title={`${title} | Richard Yuh`} description={description} type="article">
-  <main class="essay-shell">
-    <nav aria-label="Breadcrumb">
+  <main class="site-shell">
+    <nav class="site-nav" aria-label="Breadcrumb">
       <a href="/">← richyuh</a>
     </nav>
 
-    <article>
+    <article class="prose">
       <Content />
     </article>
 
-    <footer>
+    <footer class="site-footer">
       <a href="https://github.com/richyuh/richyuh/blob/main/essays/the-software-factory.md">
         View the source on GitHub
       </a>
     </footer>
   </main>
 </Layout>
-
-<style is:global>
-  :root {
-    color: #171717;
-    background: #faf9f6;
-    font-family: Georgia, 'Times New Roman', serif;
-  }
-
-  body {
-    margin: 0;
-  }
-
-  .essay-shell {
-    width: min(100% - 2rem, 760px);
-    margin: 0 auto;
-    padding: 2.5rem 0 4rem;
-  }
-
-  .essay-shell nav,
-  .essay-shell footer {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.65rem;
-  }
-
-  .essay-shell nav {
-    margin-bottom: 3rem;
-  }
-
-  .essay-shell footer {
-    margin-top: 3rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid #d9d5ce;
-  }
-
-  .essay-shell a {
-    color: #305f87;
-    text-decoration: underline;
-    text-decoration-thickness: 0.05em;
-    text-underline-offset: 0.15em;
-  }
-
-  .essay-shell article > h1 {
-    max-width: 17ch;
-    margin: 0 0 1rem;
-    font-size: clamp(2rem, 7vw, 3.35rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
-  }
-
-  .essay-shell article > h1 + p {
-    margin: 0 0 3rem;
-    color: #625e57;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  .essay-shell article h2 {
-    margin: 2.75rem 0 0.8rem;
-    font-size: 1.35rem;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
-
-  .essay-shell article p,
-  .essay-shell article li {
-    font-size: 0.82rem;
-    line-height: 1.7;
-  }
-
-  .essay-shell article p {
-    margin: 0 0 1.15rem;
-  }
-
-  .essay-shell article ul,
-  .essay-shell article ol {
-    padding-left: 1.25rem;
-  }
-
-  .essay-shell article li {
-    margin-bottom: 0.45rem;
-  }
-
-  .essay-shell article blockquote {
-    margin: 2rem 0;
-    padding: 0.25rem 0 0.25rem 1.25rem;
-    border-left: 3px solid #a85f3d;
-    color: #3d3933;
-  }
-
-  .essay-shell article blockquote p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  @media (max-width: 560px) {
-    .essay-shell {
-      width: min(100% - 1.4rem, 760px);
-      padding-top: 1.5rem;
-    }
-
-    .essay-shell nav {
-      margin-bottom: 2rem;
-    }
-  }
-</style>
