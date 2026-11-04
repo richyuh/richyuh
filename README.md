@@ -2,6 +2,10 @@
 
 Personal website and blog
 
+## Writing
+
+- [The Software Factory: Why Knowledge Must Move Beyond Code Review](./essays/the-software-factory.md) — How agentic development shifts engineering attention from code production and review toward specifications, verification, and system understanding.
+
 ## Stack
 
 - [Astro](https://astro.build/) - Static site generator
